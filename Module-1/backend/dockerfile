@@ -1,3 +1,20 @@
-# Dockerfile
-FROM mysql:8.0
-EXPOSE 3306
+# Use official Python 3.9 slim image as base
+FROM python:3.9-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy application source code into the container
+COPY app.py /app/
+
+# Install Flask framework
+RUN pip install flask
+
+# Create a directory for log files
+RUN mkdir /logs
+
+# Expose port 5000 for the Flask app
+EXPOSE 5000
+
+# Run the Flask application
+CMD ["python", "app.py"]
