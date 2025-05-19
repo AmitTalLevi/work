@@ -1,3 +1,3 @@
+# Dockerfile
 FROM mysql:8.0
-# ENV TCP_PORT=3306 --> Its default
 EXPOSE 3306
